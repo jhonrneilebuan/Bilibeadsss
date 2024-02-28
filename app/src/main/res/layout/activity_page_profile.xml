@@ -11,7 +11,7 @@
         android:id="@+id/iv_logo"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/bilibeads_logo" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/et_search"
@@ -77,7 +77,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/first_name"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -94,62 +94,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Name"
+            android:text="Username:"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_marginLeft="5dp"/>
+
         <TextView
+            android:id="@+id/tvUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
             android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/tab_indicator_text"/>
+            android:text="@string/user"
+            android:textColor="@android:color/tab_indicator_text"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/last_name"
+        android:id="@+id/tvemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
         android:paddingTop="20dp"
-        android:layout_below="@id/first_name"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_person"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Last Name"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:layout_marginLeft="5dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/tab_indicator_text"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/user_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="20dp"
-        android:layout_below="@id/last_name"
+        android:layout_below="@id/username"
         android:gravity="center_vertical">
 
         <ImageView
@@ -159,51 +128,58 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="Email        :"
             android:textStyle="bold"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:layout_marginLeft="8dp"/>
+            android:layout_marginLeft="5dp"/>
+
         <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="userprofile@lebron.com"
-            android:layout_marginLeft="70dp"
+            android:text="@string/email"
+            android:layout_marginStart="25dp"
             android:textSize="18dp"
             android:textColor="@android:color/tab_indicator_text"/>
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/user_address"
+        android:id="@+id/tvaddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
         android:paddingTop="20dp"
-        android:layout_below="@id/user_email"
+        android:layout_below="@id/tvemail"
         android:gravity="center_vertical">
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_place"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:layout_marginLeft="8dp"
+            android:text="Address  :"
             android:textColor="@color/black"
-            android:layout_marginLeft="8dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123 Pangasinan"
-            android:layout_marginLeft="40dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/tab_indicator_text"/>
+            android:layout_marginLeft="25dp"
+            android:hint="@string/_123_pangasinan"
+            android:textColor="@android:color/tab_indicator_text"
+            android:textSize="18dp" />
     </LinearLayout>
+
 
     <Button
         android:id="@+id/edit_profile"
@@ -239,7 +215,5 @@
         android:text="LogOut"
         android:textAlignment="center"
         android:textAllCaps="true" />
-
-
 
 </RelativeLayout>

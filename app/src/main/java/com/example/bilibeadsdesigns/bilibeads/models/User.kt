@@ -11,8 +11,5 @@ data class User(
     val email: String,
 
     @SerializedName("password")
-    val password: String,
-
-    @SerializedName("confirmPassword")
-    val confirmPassword: String
+    val password: String
 )

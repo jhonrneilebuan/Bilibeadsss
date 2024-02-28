@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Bilibeads.</string>
     <string name="hint_search">Search</string>
+    <string name="email">Email</string>
+    <string name="user">User</string>
+    <string name="_123_pangasinan">123 pangasinan</string>
 </resources>

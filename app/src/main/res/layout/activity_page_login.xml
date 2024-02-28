@@ -7,7 +7,7 @@
     tools:context=".LoginActivity"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/round_blue_edit_text_1"
+    android:background="@drawable/gradient_background"
     >
 
     <androidx.cardview.widget.CardView
@@ -26,7 +26,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/bilibeads_logo"
+                android:src="@drawable/logo"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp">
@@ -41,7 +41,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/round_back_blue_15"
-                android:hint="Username"
+                android:hint="Email"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingStart="20dp"
@@ -106,7 +106,7 @@
                 android:layout_marginStart="20dp"
                 android:gravity="center"
                 android:text="Confirm"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:background="@drawable/blue_confirmation_oval"
                 android:textAllCaps="false"
                 android:layout_marginTop="20dp"

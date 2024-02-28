@@ -8,20 +8,20 @@
 
     <ImageView
         android:id="@+id/bilibeads_icon"
-        android:layout_width="250dp"
+        android:layout_width="450dp"
         android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/bilibeads_logo">
+        android:src="@drawable/logo">
 
 
     </ImageView>
-    <!--<ProgressBar
+    <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/bilibeads_icon"
         android:indeterminateTint="@color/Blue"
         android:indeterminateDuration="@android:integer/config_longAnimTime">
 
-    </ProgressBar>-->
+    </ProgressBar>
 
 </RelativeLayout>

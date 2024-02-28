@@ -7,6 +7,7 @@
     tools:context=".RegistrationActivity"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/gradient_background"
     >
 
     <androidx.cardview.widget.CardView
@@ -23,11 +24,12 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/img_logo_create"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/bilibeads_logo">
+                android:src="@drawable/logo">
 
             </ImageView>
 
@@ -192,7 +194,7 @@
                 android:background="@drawable/blue_confirmation_oval"
                 android:text="Create"
                 android:textAllCaps="false"
-                android:textColor="@color/black">
+                android:textColor="@color/white">
 
             </androidx.appcompat.widget.AppCompatButton>
 
@@ -203,7 +205,7 @@
                 android:text="Already have an account? Sign In"
                 android:gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"></TextView>
+                android:layout_marginBottom="20dp" />
 
 
 

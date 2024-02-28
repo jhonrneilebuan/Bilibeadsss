@@ -1,31 +1,27 @@
 package com.example.bilibeadsdesigns
-import android.content.Intent
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.example.bilibeadsdesigns.Dashboard.Dashboard
 import com.example.bilibeadsdesigns.bilibeads.models.RetrofitClient
 import com.example.bilibeadsdesigns.bilibeads.models.User
+import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class RegistrationActivity : AppCompatActivity() {
 
-    private lateinit var et_name:EditText
-    private lateinit var et_emailAddress:EditText
-    private lateinit var et_password:EditText
-    private lateinit var et_confirmPassword:EditText
+    private lateinit var et_name: EditText
+    private lateinit var et_emailAddress: EditText
+    private lateinit var et_password: EditText
+    private lateinit var et_confirmPassword: EditText
     private lateinit var tv_button_SignIn: AppCompatButton
 
     private val apiService = RetrofitClient.getService()
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +31,14 @@ class RegistrationActivity : AppCompatActivity() {
         et_emailAddress = findViewById(R.id.register_email)
         et_password = findViewById(R.id.register_password)
         et_confirmPassword = findViewById(R.id.register_confirm_password)
-        tv_button_SignIn = findViewById((R.id.bt_registration))
+        tv_button_SignIn = findViewById(R.id.bt_registration)
 
-        tv_button_SignIn.setOnClickListener{
+        tv_button_SignIn.setOnClickListener {
             registerUser()
         }
-
-
     }
-    private fun registerUser(){
+
+    private fun registerUser() {
         val name = et_name.text.toString().trim()
         val email = et_emailAddress.text.toString().trim()
         val password = et_password.text.toString().trim()
@@ -70,23 +65,22 @@ class RegistrationActivity : AppCompatActivity() {
         val user = User(
             name = name,
             email = email,
-            password = password,
-            confirmPassword = confirmPassword
+            password = password
         )
-        val apiService = RetrofitClient.getService()
         val call = apiService.register(user)
 
         call.enqueue(object : Callback<User> {
-            override fun onResponse(call: retrofit2.Call<User>, response: Response<User>) {
-
+            override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
+                    val registeredUser = response.body()
+                    saveUserData(registeredUser)
+
                     startActivity(Intent(this@RegistrationActivity, Dashboard::class.java))
                     finish()
                     Toast.makeText(
                         this@RegistrationActivity,
                         "Registered successfully",
                         Toast.LENGTH_SHORT
-
                     ).show()
 
                 } else {
@@ -98,7 +92,7 @@ class RegistrationActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: retrofit2.Call<User>, t: Throwable) {
+            override fun onFailure(call: Call<User>, t: Throwable) {
                 Toast.makeText(
                     this@RegistrationActivity,
                     "User Already Exist!",
@@ -106,6 +100,16 @@ class RegistrationActivity : AppCompatActivity() {
                 ).show()
             }
         })
+    }
 
+    private fun saveUserData(user: User?) {
+        val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("name", user?.name)
+        editor.putString("email", user?.email)
+        // Add more fields as needed
+
+        editor.apply()
     }
 }
